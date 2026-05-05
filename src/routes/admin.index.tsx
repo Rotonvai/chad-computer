@@ -97,7 +97,7 @@ function Dashboard() {
           </div>
           <div className="text-sm text-muted-foreground">Live dashboard metrics for your center.</div>
         </div>
-        <div className="mt-6 h-[320px]">
+        <div className="mt-6 h-[240px] sm:h-[320px]">
           <ChartContainer
             id="revenue-overview"
             className="h-full"
@@ -126,7 +126,7 @@ function Dashboard() {
           </div>
           <div className="text-sm text-muted-foreground">A quick view of how leads convert into student growth.</div>
         </div>
-        <div className="mt-6 h-[320px]">
+        <div className="mt-6 h-[240px] sm:h-[320px]">
           <ChartContainer
             id="students-leads"
             className="h-full"
