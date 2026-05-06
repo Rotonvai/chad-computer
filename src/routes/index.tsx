@@ -146,7 +146,7 @@ function HomePage() {
                   <div className="font-bold text-primary">৳{Number(c.fee).toLocaleString("en-IN")}</div>
                 </div>
                 <Button asChild size="sm">
-                  <a href={waLink(`Hi ${SITE.name}, I'm interested in ${c.name}.`)} target="_blank" rel="noopener noreferrer">Enquire</a>
+                  <Link to="/contact">Enquire</Link>
                 </Button>
               </div>
             </Card>
