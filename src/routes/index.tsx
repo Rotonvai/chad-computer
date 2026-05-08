@@ -29,23 +29,31 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-        <div className="container mx-auto px-4 py-20 md:py-28 text-primary-foreground">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="https://scontent.fdac177-1.fna.fbcdn.net/v/t1.6435-9/79924904_2457862907875228_25595415218880512_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=2a1932&_nc_eui2=AeHsxco_gb7nyh52FElYbJzwGdxgh6jzgzUZ3GCHqPODNZD9FMxFCc5M9IbPChOcL0UnveudSIGyyWBBidGZ2fgw&_nc_ohc=b8FjUMDX2ikQ7kNvwHjVFS3&_nc_oc=Adqt8BSo0PGFumCol1w3YDlhQS9uqyfeChuG56mRAZH36GKLR6mqP4OcHHwsKkmwbcs&_nc_zt=23&_nc_ht=scontent.fdac177-1.fna&_nc_gid=McZ_LDIWrk4BHVXrglELvQ&_nc_ss=7b2a8&oh=00_Af7qmKbOhivXRPO5TNNReLd-zkTxwTn4K1u2ct2TlQ9aUA&oe=6A24E3EA"
+            alt="Students learning in a computer classroom"
+            className="h-full w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-950/65" />
+        </div>
+        <div className="relative container mx-auto px-4 py-24 md:py-32 text-primary-foreground">
           <div className="max-w-3xl">
-            <span className="inline-block px-3 py-1 rounded-full bg-primary-foreground/15 text-sm font-medium mb-4">
-              Admissions Open · Limited Seats
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-sm font-medium mb-6 backdrop-blur-sm border border-white/15">
+              <span className="h-2 w-2 rounded-full bg-primary" /> Admissions Open · Limited Seats
             </span>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Build a Career in <span className="text-primary-glow">Tech</span> with {SITE.name}
+              Transform your future with <span className="text-primary-glow">practical computer training</span>
             </h1>
-            <p className="mt-5 text-lg md:text-xl text-primary-foreground/90 max-w-2xl">
-              Practical, job-focused computer courses taught by experienced trainers. From the basics to advanced programming — we'll get you industry-ready.
+            <p className="mt-6 text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
+              {SITE.name} helps learners gain job-ready skills through hands-on classes, modern labs, and placement support. Start now with courses built for real career outcomes.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild size="lg" variant="secondary">
                 <Link to="/courses">Browse Courses <ArrowRight className="ml-1 h-4 w-4" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-transparent border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10">
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/15">
                 <Link to="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -73,30 +81,27 @@ function HomePage() {
       {/* About */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="text-sm font-semibold text-primary uppercase tracking-wide">About Us</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">Where Skills Meet Opportunity</h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed">
+          <div className="flex flex-col items-end text-right ml-5">
+            <span className="text-3xl md:text-4xl font-bold text-primary uppercase tracking-widest">About Us</span>
+            <div className="mt-6 rounded-3xl overflow-hidden border border-border w-full max-w-xl">
+              <img
+                src="https://scontent.fdac177-2.fna.fbcdn.net/v/t1.6435-9/167919607_2861540914174090_6693552372810333560_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeGpru44IUaiPzsSt-8OFZqFZ_hN8WuRNPpn-E3xa5E0-lhQeis4azbEP0Ggj70pZOcUg6j_LfvwTzBj6UHFxZuK&_nc_ohc=IlmiGFUYNOYQ7kNvwHOpU8J&_nc_oc=Adp7nX6KsaZB1UXBl5-G7Az3vJh1NZSlAtUl6Awut5YqeUejwVCLQDB52wNot-R3Ga8&_nc_zt=23&_nc_ht=scontent.fdac177-2.fna&_nc_gid=UjPTZgsZyHvSJvUy0p4mQw&_nc_ss=7b2a8&oh=00_Af5fDITCdu2fmuNf5hX7w6tNUv-kQUqlLubv5XE1EKQFxw&oe=6A251ACA"
+                alt="Students and instructors during a computer training session"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+          </div>
+          <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl font-bold">Where Skills Meet Opportunity</h2>
+            <p className="text-muted-foreground leading-relaxed">
               {SITE.name} is a leading computer coaching center dedicated to empowering students with practical digital skills. Our curriculum blends theory with hands-on lab work so every learner can confidently step into the workplace.
             </p>
-            <p className="mt-3 text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed">
               We focus on small batch sizes, personal attention, and real-world projects — because that's how you actually learn.
             </p>
-            <Button asChild className="mt-6"><Link to="/about">Learn more <ArrowRight className="ml-1 h-4 w-4" /></Link></Button>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: GraduationCap, t: "Expert Trainers", d: "Industry-experienced faculty" },
-              { icon: Laptop, t: "Modern Labs", d: "Latest hardware & software" },
-              { icon: Award, t: "Certifications", d: "Recognized course completion" },
-              { icon: Briefcase, t: "Placement Help", d: "Resume + interview support" },
-            ].map((f) => (
-              <Card key={f.t} className="p-5">
-                <f.icon className="h-8 w-8 text-primary" />
-                <h3 className="font-semibold mt-3">{f.t}</h3>
-                <p className="text-sm text-muted-foreground mt-1">{f.d}</p>
-              </Card>
-            ))}
+            <Button asChild className="mt-6">
+              <Link to="/about">Learn more <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
           </div>
         </div>
       </section>
