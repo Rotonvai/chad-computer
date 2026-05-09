@@ -106,32 +106,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="bg-secondary/40 py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-2xl mx-auto">
-            <span className="text-sm font-semibold text-primary uppercase tracking-wide">Why Choose Us</span>
-            <h2 className="text-3xl md:text-4xl font-bold mt-2">A learning experience built for results</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
-            {[
-              { icon: BadgeCheck, t: "Industry-aligned syllabus", d: "Curriculum updated regularly to match what employers actually need." },
-              { icon: Users, t: "Small batch sizes", d: "Personal attention and one-on-one doubt clearing for every student." },
-              { icon: Laptop, t: "100% practical", d: "Every concept is reinforced with real lab exercises and projects." },
-            ].map((f) => (
-              <Card key={f.t} className="p-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
-                  <f.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-lg font-semibold mt-4">{f.t}</h3>
-                <p className="text-muted-foreground mt-2">{f.d}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured courses */}
+       {/* Featured courses */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="flex items-end justify-between flex-wrap gap-4 mb-8">
           <div>
@@ -156,6 +131,31 @@ function HomePage() {
               </div>
             </Card>
           ))}
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="bg-secondary/40 py-16 md:py-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-sm font-semibold text-primary uppercase tracking-wide">Why Choose Us</span>
+            <h2 className="text-3xl md:text-4xl font-bold mt-2">A learning experience built for results</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {[
+              { icon: BadgeCheck, t: "Industry-aligned syllabus", d: "Curriculum updated regularly to match what employers actually need." },
+              { icon: Users, t: "Small batch sizes", d: "Personal attention and one-on-one doubt clearing for every student." },
+              { icon: Laptop, t: "100% practical", d: "Every concept is reinforced with real lab exercises and projects." },
+            ].map((f) => (
+              <Card key={f.t} className="p-6">
+                <div className="h-12 w-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                  <f.icon className="h-6 w-6" />
+                </div>
+                <h3 className="text-lg font-semibold mt-4">{f.t}</h3>
+                <p className="text-muted-foreground mt-2">{f.d}</p>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 

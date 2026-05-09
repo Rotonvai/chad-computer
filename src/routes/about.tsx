@@ -18,71 +18,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <SiteLayout>
-      <section className="bg-slate-50 py-20 md:py-28">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.9fr] items-start">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-8 md:p-12 shadow-sm">
-              <span className="inline-flex items-center rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">About {SITE.name}</span>
-              <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-slate-900">Practical computer learning, personal attention, and real career results.</h1>
-              <p className="mt-5 max-w-2xl text-base md:text-lg text-slate-600 leading-relaxed">From basic computer skills to programming, our coaching center combines live practice, updated technology, and small batch training so every student gains confidence and real workplace ability.</p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                {[
-                  "Small batches for focused learning",
-                  "Hands-on exercises in every class",
-                  "Resume and interview preparation",
-                  "Flexible schedules for all learners",
-                ].map((item) => (
-                  <div key={item} className="rounded-3xl border border-slate-200 bg-slate-50 px-4 py-4 text-sm font-medium text-slate-700">
-                    {item}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button asChild size="lg" className="sm:max-w-max">
-                  <Link to="/contact">Get in touch</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="sm:max-w-max">
-                  <Link to="/courses">Explore courses</Link>
-                </Button>
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <Card className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                <div className="text-sm uppercase font-semibold tracking-[0.18em] text-slate-500">Why choose us</div>
-                <div className="mt-6 space-y-4 text-sm text-slate-700">
-                  <div className="rounded-3xl bg-white p-4 shadow-sm">
-                    <div className="font-semibold">Small batch sizes</div>
-                    <div className="mt-1 text-slate-500">Personal coaching and a pace that suits you.</div>
-                  </div>
-                  <div className="rounded-3xl bg-white p-4 shadow-sm">
-                    <div className="font-semibold">Practical training</div>
-                    <div className="mt-1 text-slate-500">Learn by doing with real software and projects.</div>
-                  </div>
-                  <div className="rounded-3xl bg-white p-4 shadow-sm">
-                    <div className="font-semibold">Career support</div>
-                    <div className="mt-1 text-slate-500">Get resume help, interview coaching, and placement guidance.</div>
-                  </div>
-                </div>
-              </Card>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  { value: "1500+", label: "Students trained" },
-                  { value: "95%", label: "Placement support" },
-                  { value: "10+", label: "Expert trainers" },
-                  { value: "20+", label: "Courses offered" },
-                ].map((stat) => (
-                  <Card key={stat.label} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 text-center shadow-sm">
-                    <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
-                    <div className="mt-2 text-sm text-slate-500">{stat.label}</div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <section className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-3 gap-6">
@@ -111,6 +47,49 @@ function AboutPage() {
             <li>জীবনবৃত্তান্ত তৈরিতে সহায়তা এবং সাক্ষাৎকারের প্রস্তুতি</li>
             <li>২৪/৭ সুবিধাজনক ব্যাচ</li>
           </ul>
+        </div>
+
+        <div className="mt-16 max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold text-foreground">আমাদের সেশন</h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">আমরা সারা বছর জুড়ে নমনীয় সেশন সময়সূচী অফার করি যাতে আপনি আপনার সুবিধামত যেকোনো সময় যোগ দিতে পারেন। আমাদের কোর্সগুলি তিন এবং ছয় মাসের দুটি বিকল্পে পাওয়া যায়।</p>
+          <div className="mt-8 grid md:grid-cols-2 gap-6">
+            <Card className="p-8 rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 shadow-sm">
+              <h3 className="text-xl font-bold text-foreground">৩ মাসের কোর্স</h3>
+              <p className="mt-3 text-lg font-semibold text-primary">৪টি সেশন প্রতি বছর</p>
+              <p className="mt-2 text-sm text-muted-foreground">জানুয়ারি, এপ্রিল, জুলাই এবং অক্টোবরে শুরু হয়</p>
+            </Card>
+            <Card className="p-8 rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50 shadow-sm">
+              <h3 className="text-xl font-bold text-foreground">৬ মাসের কোর্স</h3>
+              <p className="mt-3 text-lg font-semibold text-primary">২টি সেশন প্রতি বছর</p>
+              <p className="mt-2 text-sm text-muted-foreground">জানুয়ারি এবং জুলাইতে শুরু হয়</p>
+            </Card>
+          </div>
+        </div>
+
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-foreground mb-2">আমাদের প্রতিশ্রুতি</h2>
+          <p className="text-muted-foreground mb-8 leading-relaxed">প্রতিটি কোর্স জুড়ে, আমরা শুধু শিক্ষা নয়, একটি সম্পূর্ণ অভিজ্ঞতা প্রদান করি। আমাদের সুসংগঠিত প্রক্রিয়া নিশ্চিত করে যে আপনি সর্বোত্তম শিক্ষার মান এবং সহায়তা পান।</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { title: "সহজ ভর্তি প্রক্রিয়া", desc: "প্রতিটি সেশনের পূর্বে ভর্তি কার্যক্রম চালু থাকে। কোন জটিলতা নেই, শুধু সরল পদক্ষেপ।" },
+              { title: "সার্টিফিকেট নিবন্ধন", desc: "সরকারি স্বীকৃত সার্টিফিকেটের জন্য বোর্ড রেজিস্ট্রেশন এবং সম্পূর্ণ সহায়তা প্রদান করি।" },
+              { title: "কঠোর মূল্যায়ন পদ্ধতি", desc: "ইনস্টিটিউট এবং বোর্ড উভয় স্তরে তাত্ত্বিক এবং ব্যবহারিক পরীক্ষা নিশ্চিত করে দক্ষতা যাচাই।" },
+              { title: "নবীন বরণ অনুষ্ঠান", desc: "প্রতিটি নতুন ব্যাচের জন্য একটি স্মরণীয় স্বাগত অনুষ্ঠানের আয়োজন করি।" },
+              { title: "সাংস্কৃতিক বিকাশ", desc: "সাংস্কৃতিক প্রতিযোগিতা এবং কার্যক্রমের মাধ্যমে শিক্ষার্থীদের প্রতিভা বিকাশে সহায়তা।" },
+              { title: "শিক্ষামূলক ভ্রমণ", desc: "প্রতিটি সেশনে শিক্ষা সফরের মাধ্যমে বাস্তব জগতের অভিজ্ঞতা অর্জন করুন।" },
+              { title: "ক্যারিয়ার সহায়তা", desc: "চাকরি খুঁজে পেতে এবং সফল ক্যারিয়ার গড়ে তুলতে সম্পূর্ণ সহযোগিতা প্রদান করি।" },
+              { title: "প্রতিভা বৃত্তি", desc: "প্রতিভাবান এবং দরিদ্র শিক্ষার্থীদের জন্য বিশেষ আর্থিক সহায়তা উপলব্ধ।" },
+              { title: "নমনীয় ক্লাস সময়", desc: "প্রতিদিন ১.৫ ঘণ্টার সেশন সপ্তাহে ৬ দিন যা আপনার সময়সূচীর সাথে মানানসই।" },
+              { title: "অত্যাধুনিক প্রশিক্ষণ", desc: "ইন্টারনেট, মাল্টিমিডিয়া এবং ফ্রিল্যান্সিং এ সাশ্রয়ী মূল্যে উন্নত প্রশিক্ষণ।" },
+              { title: "স্বাস্থ্য ও সুস্থতা", desc: "শিক্ষার্থীদের শারীরিক এবং মানসিক সুস্থতার জন্য বিনোদন ও স্বাস্থ্য সুবিধা।" },
+              { title: "আধুনিক সুবিধা", desc: "অত্যাধুনিক কম্পিউটার ল্যাব এবং শিক্ষা প্রযুক্তি সহ সম্পূর্ণ প্রস্তুত পরিবেশ।" },
+            ].map((item) => (
+              <Card key={item.title} className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200">
+                <h4 className="font-semibold text-foreground text-sm">{item.title}</h4>
+                <p className="mt-3 text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
+              </Card>
+            ))}
+          </div>
         </div>
 
         <div className="text-center mt-12">

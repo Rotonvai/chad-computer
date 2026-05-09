@@ -1,7 +1,7 @@
 // Edit these to update contact details site-wide.
 export const SITE = {
-  name: "Chad Computer",
-  tagline: "Chad Computer Coaching Center",
+  name: "Chand Computer",
+  tagline: "Chand Computer Training Institute",
   phone: "+8801717199800",
   whatsapp: "+8801717199800", // digits only, with country code
   email: "chandcomputer@gmail.com",
