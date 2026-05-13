@@ -27,7 +27,7 @@ function HomePage() {
   }, []);
 
   return (
-    <SiteLayout>
+    <SiteLayout showWhatsAppFab={false}>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">

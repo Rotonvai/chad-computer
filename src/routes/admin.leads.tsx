@@ -93,9 +93,9 @@ function Leads() {
                     <SelectTrigger className="w-32"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="new"><Badge variant="default">New</Badge></SelectItem>
-                      <SelectItem value="contacted"><Badge variant="secondary">Contacted</Badge></SelectItem>
-                      <SelectItem value="converted"><Badge>Converted</Badge></SelectItem>
-                      <SelectItem value="closed"><Badge variant="outline">Closed</Badge></SelectItem>
+                      <SelectItem value="contacted"><Badge variant="default" className="bg-green-500">Accepted</Badge></SelectItem>
+                      <SelectItem value="converted"><Badge variant="destructive">Rejected</Badge></SelectItem>
+                      
                     </SelectContent>
                   </Select>
                 </TableCell>

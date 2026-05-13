@@ -52,7 +52,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen flex bg-secondary/30">
       {/* Desktop sidebar */}
-      <aside className="hidden md:flex w-64 flex-col bg-sidebar text-sidebar-foreground border-r border-sidebar-border">
+      <aside className="admin-sidebar hidden md:flex w-64 flex-col bg-sidebar text-sidebar-foreground border-r border-sidebar-border">
         <div className="h-16 flex items-center gap-2 px-5 border-b border-sidebar-border font-bold">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <MonitorSmartphone className="h-4 w-4" />
@@ -71,7 +71,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
       {open && (
         <div className="md:hidden fixed inset-0 z-50 flex">
           <div className="absolute inset-0 bg-black/50" onClick={() => setOpen(false)} />
-          <aside className="relative w-64 flex flex-col bg-sidebar text-sidebar-foreground">
+          <aside className="admin-sidebar relative w-64 flex flex-col bg-sidebar text-sidebar-foreground">
             <div className="h-16 flex items-center justify-between px-5 border-b border-sidebar-border font-bold">
               <span>{SITE.name} Admin</span>
               <button onClick={() => setOpen(false)}><X className="h-5 w-5" /></button>
@@ -87,7 +87,7 @@ export function AdminShell({ children }: { children: ReactNode }) {
       )}
 
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="h-16 bg-card border-b border-border flex items-center justify-between px-4 md:px-6">
+        <header className="admin-header h-16 bg-card border-b border-border flex items-center justify-between px-4 md:px-6">
           <button className="md:hidden p-2" onClick={() => setOpen(true)}><Menu className="h-5 w-5" /></button>
           <div className="font-semibold">Admin Panel</div>
           <Link to="/" className="text-sm text-muted-foreground hover:text-primary">View site →</Link>

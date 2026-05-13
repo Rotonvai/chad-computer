@@ -35,6 +35,7 @@ type Student = {
   course_id: string | null; joined_on: string; status: string; notes: string | null;
 };
 type Course = { id: string; name: string };
+type Lead = { id: string; name: string; phone: string; email: string | null; course_interest: string | null; message: string | null };
 
 const empty = { full_name: "", phone: "", email: "", address: "", course_id: "", joined_on: new Date().toISOString().slice(0, 10), status: "active", notes: "" };
 
@@ -46,6 +47,7 @@ function StudentsPage() {
 function Students() {
   const [list, setList] = useState<Student[]>([]);
   const [courses, setCourses] = useState<Course[]>([]);
+  const [leads, setLeads] = useState<Lead[]>([]);
   const [search, setSearch] = useState("");
   const [open, setOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
@@ -60,6 +62,7 @@ function Students() {
   useEffect(() => {
     load();
     supabase.from("courses").select("id,name").order("sort_order").then(({ data }) => setCourses(data ?? []));
+    supabase.from("leads").select("id,name,phone,email,course_interest,message").eq("status", "contacted").order("created_at", { ascending: false }).then(({ data }) => setLeads(data ?? []));
   }, []);
 
   const openNew = () => { setEditId(null); setForm(empty); setOpen(true); };
@@ -70,6 +73,19 @@ function Students() {
       course_id: s.course_id ?? "", joined_on: s.joined_on, status: s.status, notes: s.notes ?? "",
     });
     setOpen(true);
+  };
+
+  const selectLead = (leadId: string) => {
+    const lead = leads.find(l => l.id === leadId);
+    if (lead) {
+      setForm({
+        ...form,
+        full_name: lead.name,
+        phone: lead.phone,
+        email: lead.email ?? "",
+        notes: lead.message ?? "",
+      });
+    }
   };
 
   const save = async () => {
@@ -158,6 +174,17 @@ function Students() {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-lg">
           <DialogHeader><DialogTitle>{editId ? "Edit Student" : "Add Student"}</DialogTitle></DialogHeader>
+          {!editId && (
+            <div>
+              <Label>Import from Accepted Lead</Label>
+              <Select onValueChange={selectLead}>
+                <SelectTrigger><SelectValue placeholder="Select a lead to import details" /></SelectTrigger>
+                <SelectContent>
+                  {leads.map((l) => <SelectItem key={l.id} value={l.id}>{l.name} - {l.phone}</SelectItem>)}
+                </SelectContent>
+              </Select>
+            </div>
+          )}
           <div className="grid gap-3">
             <div className="grid sm:grid-cols-2 gap-3">
               <div><Label>Full Name *</Label><Input value={form.full_name} onChange={(e) => setForm({ ...form, full_name: e.target.value })} /></div>

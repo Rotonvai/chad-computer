@@ -308,6 +308,13 @@ function InvoiceDetail({ invoice, onBack }: { invoice: Invoice; onBack: () => vo
 
   return (
     <div className="space-y-4">
+      <style>{`
+        @media print {
+          .admin-sidebar, .admin-header { display: none !important; }
+          body { margin: 0; padding: 0; }
+          #print-area { box-shadow: none; border: none; margin: 0; padding: 20px; }
+        }
+      `}</style>
       <div className="flex items-center justify-between print:hidden">
         <Button variant="ghost" onClick={onBack}><ArrowLeft className="h-4 w-4 mr-1" /> Back</Button>
         <Button variant="outline" onClick={() => window.print()}><Printer className="h-4 w-4 mr-1" /> Print</Button>
